@@ -2,81 +2,61 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Lengkapi Data - Tubeflix</title>
+    <title>Mulai Berlangganan - Tubeflix</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* Style spesifik halaman ini */
-        .signup-body { background: white; color: #333; }
-        .signup-nav { border-bottom: 1px solid #e6e6e6; background: white; }
-        .signup-nav .logo { color: var(--primary-color); text-decoration: none; font-size: 2.5rem; font-weight: bold;}
-        .signup-container { max-width: 440px; margin: 50px auto; padding: 20px 4%; }
-        
-        /* Overwrite style input agar background putih (khusus halaman ini) */
-        .signup-container input, 
-        .signup-container select {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-            border: 1px solid #8c8c8c;
-            border-radius: 2px;
-            font-size: 1rem;
-            background: white;
-            color: black;
-        }
-        
-        /* Layout 2 kolom untuk tanggal lahir & gender */
-        .form-row { display: flex; gap: 15px; }
-        .form-col { flex: 1; }
-        
-        label { font-weight: bold; display: block; margin-bottom: 5px; }
-    </style>
 </head>
-<body class="signup-body">
-    <nav class="signup-nav" style="padding: 20px 4%; display:flex; justify-content:space-between; align-items: center;">
+<body>
+    <header>
         <a href="index.html" class="logo">TUBEFLIX</a>
-        <a href="login.html" style="color:#333; font-weight:bold; font-size: 1.1rem; text-decoration:none;">Masuk</a>
-    </nav>
+        <a href="login.html" class="btn-red">Masuk</a>
+    </header>
 
-    <div class="signup-container">
-        <!-- <p style="font-size: 0.8rem; color: #666;">LANGKAH 2 DARI 2</p> -->
-        <h2 style="font-size: 2rem; margin: 5px 0 15px 0;">Data Diri & Paket</h2>
-        <p style="margin-bottom: 25px; color: #333;">Lengkapi data di bawah ini untuk menyelesaikan pendaftaran.</p>
+    <div class="form-wrapper">
+        <div class="form-box">
+            <h2>Daftar</h2>
+            <form action="browse.html">
+                
+                <div class="input-group">
+                    
+                    <input type="nama-lengkap" placeholder="Nama Lengkap" required>
+                    <input type="email" placeholder="Email" required>
 
-        <form action="browse.html">
-            
-            <label>Nama Lengkap</label>
-            <input type="text" placeholder="Contoh: Budi Santoso" required>
+                    <div class="form-row">
+                        <div class="form-col">
+                            <label class="input-label">Tanggal Lahir</label>
+                            <input type="date" required class="dark-input">
+                        </div>
+                        <div class="form-col">
+                            <label class="input-label">Jenis Kelamin</label>
+                            <select required class="dark-input">
+                                <option value="" disabled selected>Pilih...</option>
+                                <option value="pria">Pria</option>
+                                <option value="wanita">Wanita</option>
+                            </select>
+                        </div>
+                    </div>
 
-            <label>Email</label>
-            <input type="email" placeholder="Email" required>
+                    <div>
+                        <label class="input-label">Pilihan Paket</label>
+                        <select required class="dark-input">
+                            <option value="" disabled selected>Pilih Paket Langganan</option>
+                            <option value="mobile">Ponsel - Rp 54.000 (480p)</option>
+                            <option value="basic">Dasar - Rp 120.000 (720p)</option>
+                            <option value="standard">Standar - Rp 153.000 (1080p)</option>
+                            <option value="premium">Premium - Rp 186.000 (4K)</option>
+                        </select>
+                    </div>
 
-            <div class="form-row">
-                <div class="form-col">
-                    <label>Tanggal Lahir</label>
-                    <input type="date" required style="color: #333;"> 
                 </div>
-                <div class="form-col">
-                    <label>Jenis Kelamin</label>
-                    <select required>
-                        <option value="">Pilih...</option>
-                        <option value="pria">Pria</option>
-                        <option value="wanita">Wanita</option>
-                        <option value="lainnya">Lainnya</option>
-                    </select>
+
+                <br>
+                <button type="submit" class="btn-red" style="width: 100%; padding: 15px; margin-top: 10px;">Daftar Sekarang</button>
+                
+                <div style="margin-top: 20px; color: #737373;">
+                    Sudah punya akun? <a href="login.html" style="color: white;">Masuk di sini.</a>
                 </div>
-            </div>
-
-            <label>Pilihan Paket</label>
-            <select required>
-                <option value="" disabled selected>Pilih paket berlangganan...</option>
-                <option value="mobile">Ponsel (Rp 54.000/bulan) - 480p</option>
-                <option value="basic">Dasar (Rp 120.000/bulan) - 720p</option>
-                <option value="standard">Standar (Rp 153.000/bulan) - 1080p</option>
-                <option value="premium">Premium (Rp 186.000/bulan) - 4K HDR</option>
-            </select>
-
-            <button type="submit" class="btn-red" style="width: 100%; padding: 18px; font-size: 1.2rem; margin-top: 20px;">Mulai Menonton</button>
-        </form>
+            </form>
+        </div>
     </div>
 </body>
 </html>
