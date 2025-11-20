@@ -2,16 +2,33 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Selesaikan Pendaftaran - Tubeflix</title>
+    <title>Lengkapi Data - Tubeflix</title>
     <link rel="stylesheet" href="style.css">
     <style>
+        /* Style spesifik halaman ini */
         .signup-body { background: white; color: #333; }
         .signup-nav { border-bottom: 1px solid #e6e6e6; background: white; }
         .signup-nav .logo { color: var(--primary-color); text-decoration: none; font-size: 2.5rem; font-weight: bold;}
-        .signup-container { max-width: 440px; margin: 20px auto; padding: 20px 4%; }
+        .signup-container { max-width: 440px; margin: 50px auto; padding: 20px 4%; }
         
-        /* Ikon Kartu Kredit Sederhana dengan CSS */
-        .cc-icons { font-size: 0.8rem; color: #999; border: 1px solid #ccc; padding: 5px; display: inline-block; border-radius: 4px; margin-bottom: 10px;}
+        /* Overwrite style input agar background putih (khusus halaman ini) */
+        .signup-container input, 
+        .signup-container select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #8c8c8c;
+            border-radius: 2px;
+            font-size: 1rem;
+            background: white;
+            color: black;
+        }
+        
+        /* Layout 2 kolom untuk tanggal lahir & gender */
+        .form-row { display: flex; gap: 15px; }
+        .form-col { flex: 1; }
+        
+        label { font-weight: bold; display: block; margin-bottom: 5px; }
     </style>
 </head>
 <body class="signup-body">
@@ -21,27 +38,22 @@
     </nav>
 
     <div class="signup-container">
-        <p style="font-size: 0.8rem; color: #666;">LANGKAH 2 DARI 3</p>
-        <h2 style="font-size: 2rem; margin: 5px 0 15px 0;">Siapkan akun Anda</h2>
-        <p style="margin-bottom: 25px; color: #333;">Lengkapi data diri dan metode pembayaran untuk mulai menonton.</p>
+        <!-- <p style="font-size: 0.8rem; color: #666;">LANGKAH 2 DARI 2</p> -->
+        <h2 style="font-size: 2rem; margin: 5px 0 15px 0;">Data Diri & Paket</h2>
+        <p style="margin-bottom: 25px; color: #333;">Lengkapi data di bawah ini untuk menyelesaikan pendaftaran.</p>
 
         <form action="browse.html">
-            
-            <div class="section-title">Informasi Pribadi</div>
             
             <label>Nama Lengkap</label>
             <input type="text" placeholder="Contoh: Budi Santoso" required>
 
             <label>Email</label>
-            <input type="email" placeholder="nama@email.com" required>
-
-            <label>Password</label>
-            <input type="password" placeholder="Minimal 8 karakter" required>
+            <input type="email" placeholder="Email" required>
 
             <div class="form-row">
                 <div class="form-col">
                     <label>Tanggal Lahir</label>
-                    <input type="date" required style="color: #666;"> 
+                    <input type="date" required style="color: #333;"> 
                 </div>
                 <div class="form-col">
                     <label>Jenis Kelamin</label>
@@ -54,48 +66,16 @@
                 </div>
             </div>
 
-            <div class="form-section">
-                <div class="section-title">Pilih Paket Anda</div>
-                <p class="helper-text">Anda bisa menurunkan atau menaikkan paket kapan saja.</p>
-                
-                <label>Kategori Paket</label>
-                <select required>
-                    <option value="basic">Basic (Rp 65.000/bulan) - 720p</option>
-                    <option value="standard">Standard (Rp 120.000/bulan) - 1080p</option>
-                    <option value="premium" selected>Premium (Rp 186.000/bulan) - 4K+HDR</option>
-                </select>
-            </div>
+            <label>Pilihan Paket</label>
+            <select required>
+                <option value="" disabled selected>Pilih paket berlangganan...</option>
+                <option value="mobile">Ponsel (Rp 54.000/bulan) - 480p</option>
+                <option value="basic">Dasar (Rp 120.000/bulan) - 720p</option>
+                <option value="standard">Standar (Rp 153.000/bulan) - 1080p</option>
+                <option value="premium">Premium (Rp 186.000/bulan) - 4K HDR</option>
+            </select>
 
-            <div class="form-section">
-                <div class="section-title">Atur Pembayaran</div>
-                <div class="cc-icons">VISA / MASTERCARD / BCA</div>
-
-                <label>Nomor Kartu</label>
-                <input type="text" placeholder="0000 0000 0000 0000" maxlength="19" required>
-
-                <div class="form-row">
-                    <div class="form-col">
-                        <label>Tgl Kadaluarsa</label>
-                        <input type="text" placeholder="BB/TT" maxlength="5" required>
-                    </div>
-                    <div class="form-col">
-                        <label>CVV</label>
-                        <input type="text" placeholder="123" maxlength="3" required>
-                    </div>
-                </div>
-                
-                <label>Nama di Kartu</label>
-                <input type="text" placeholder="Nama Pemilik Kartu" required>
-            </div>
-
-            <div style="margin: 20px 0; font-size: 0.85rem; color: #737373;">
-                <label style="font-weight: normal; display: flex; gap: 10px; align-items: flex-start;">
-                    <input type="checkbox" required style="width: 20px; margin: 0;">
-                    <span>Saya setuju dengan Syarat Penggunaan dan Kebijakan Privasi Tubeflix.</span>
-                </label>
-            </div>
-
-            <button type="submit" class="btn-red" style="width: 100%; padding: 18px; font-size: 1.2rem; margin-top: 10px;">Mulai Keanggotaan</button>
+            <button type="submit" class="btn-red" style="width: 100%; padding: 18px; font-size: 1.2rem; margin-top: 20px;">Mulai Menonton</button>
         </form>
     </div>
 </body>
