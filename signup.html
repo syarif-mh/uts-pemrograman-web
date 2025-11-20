@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Daftar - Tubeflix</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .signup-body { background: white; color: #333; }
+        .signup-nav { border-bottom: 1px solid #e6e6e6; background: white; }
+        .signup-nav .logo { color: var(--primary-color); }
+        .signup-nav a { color: #333; font-weight: bold; font-size: 1.2rem; }
+        .signup-container { max-width: 400px; margin: 50px auto; padding: 20px; }
+    </style>
+</head>
+<body class="signup-body">
+    <nav class="signup-nav" style="display:flex; justify-content:space-between; padding: 20px 4%;">
+        <a href="index.html" class="logo">TUBEFLIX</a>
+        <a href="login.html" style="color:#333; font-size: 1rem; align-self:center;">Masuk</a>
+    </nav>
+
+    <div class="signup-container">
+        <!-- <p style="font-size: 0.9rem; color: #666;">LANGKAH 1 DARI 3</p> -->
+        <h2 style="font-size: 2rem; margin: 10px 0;">Buat sandi untuk memulai keanggotaan</h2>
+        <p style="margin-bottom: 20px;">Hanya beberapa langkah lagi dan selesai!<br>Kami juga tidak suka formalitas.</p>
+
+        <form action="browse.html">
+            <div class="input-group">
+                <input type="email" placeholder="Email" style="background: white; border: 1px solid #ccc; color: black;" required>
+                <input type="password" placeholder="Tambahkan Sandi" style="background: white; border: 1px solid #ccc; color: black;" required>
+            </div>
+            <br>
+            <button type="submit" class="btn-red" style="width: 100%; padding: 15px; font-size: 1.1rem;">Berikutnya</button>
+        </form>
+    </div>
+</body>
+</html>
