@@ -203,3 +203,59 @@ input {
 .grid-container .poster {
     margin-bottom: 20px;
 }
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+.signup-container input, 
+.signup-container select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #8c8c8c;
+    border-radius: 2px;
+    font-size: 1rem;
+    background: white;
+    color: black;
+}
+
+.signup-container input:focus,
+.signup-container select:focus {
+    border-color: #0071eb;
+    outline: none;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-col {
+    flex: 1;
+}
+
+.form-section {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding-top: 20px;
+    border-top: 1px solid #e6e6e6;
+}
+
+.section-title {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.helper-text {
+    font-size: 0.8rem;
+    color: #737373;
+    margin-bottom: 10px;
+}
